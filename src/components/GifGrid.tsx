@@ -1,17 +1,34 @@
-import { useEffect } from "react"
-import { getGifs } from "../services/GifGridService"
+import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/UseFetchGifs";
 
 export const GifGrid = ({ category }: GifGridpProps) => {
 
-    // useEffect permite crear comportamientos una vez se ejecute algo
-    // En este ejemplo una vez se haga la consulta del gif con los [] evitamos que el componente se recargue nuevamente y haga N peticiones por cada categoria que tenga
-    useEffect( () => {
-        getGifs(category);
-    }, [])
+    // Se realiza el llamada al custom hook useFetchGifs
+    const { images, isLoading } = useFetchGifs(category);
 
     return (
         <>
             <h3>{category}</h3>
+
+            <div className="card-grid">
+                {
+                    // Se recibe un array de imagenes
+                    // Se realiza la destructuracion del objeto obteniendo el id y title
+                    // images.map(({id, title}) => (
+                    //     // <li key={id}>{title}</li>
+                    //     //<GifItem key={id}/>
+                    // ))
+
+                    images.map((image) => (
+                        // <li key={id}>{title}</li>
+                        <GifItem 
+                            key={image['id']} 
+                            // Se envian todas las propiedades del objeto image
+                            // Puede ser util cuando el objeto tenga muchas propiedades
+                            {...(image as object)}/>
+                    ))
+                }
+            </div>
         </>
     )
 }
