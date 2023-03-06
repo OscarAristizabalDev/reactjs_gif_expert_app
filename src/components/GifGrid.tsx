@@ -9,6 +9,11 @@ export const GifGrid = ({ category }: GifGridpProps) => {
     return (
         <>
             <h3>{category}</h3>
+            {
+                // if corto con una sola condición (And logico)
+                // Si es true, muestra el cargando
+                isLoading && (<h2>Cargando...</h2>)
+            }
 
             <div className="card-grid">
                 {
