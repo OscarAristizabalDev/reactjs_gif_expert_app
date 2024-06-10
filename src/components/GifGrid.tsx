@@ -24,13 +24,12 @@ export const GifGrid = ({ category }: GifGridpProps) => {
                     //     //<GifItem key={id}/>
                     // ))
 
-                    images.map((image) => (
-                        // <li key={id}>{title}</li>
-                        <GifItem 
-                            key={image['id']} 
-                            // Se envian todas las propiedades del objeto image
-                            // Puede ser util cuando el objeto tenga muchas propiedades
-                            {...(image as object)}/>
+                    images.map(({ id, title, url }) => (
+                        <GifItem
+                            key={id}
+                            title={title}
+                            url={url}
+                        />
                     ))
                 }
             </div>

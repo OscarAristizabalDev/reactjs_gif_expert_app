@@ -1,6 +1,9 @@
+type GitItemProps = {
+    title: string,
+    url: string
+}
 
-
-export const GifItem = ({title, url}: any) => {
+export const GifItem = ({title, url}: GitItemProps) => {
 
     return (
         <div className="card">
