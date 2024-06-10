@@ -1,5 +1,0 @@
-describe('Name', () => { 
-    test('should', () => {
-        
-    })
- })

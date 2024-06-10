@@ -1,3 +1,5 @@
+import React from 'react'
+
 type GitItemProps = {
     title: string,
     url: string
