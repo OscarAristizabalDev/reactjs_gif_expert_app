@@ -10,8 +10,10 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.7",
@@ -24,6 +26,7 @@
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
     "babel-jest": "^29.7.0",
+    "cross-fetch": "^4.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "ts-jest": "^29.1.4",

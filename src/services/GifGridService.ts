@@ -1,3 +1,5 @@
+import 'whatwg-fetch' // this package resolve the problem using fetch with jest
+
 export const getGifs = async (category: string) => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=wzIlWsp5NROjCJPvcGnaTf8Y5PLTzLic&q=${category}&limit=10`;
     const response = await fetch(url);
