@@ -1,10 +1,15 @@
+import React from "react";
 import { ChangeEvent, useState } from "react"
 
-export const AddCategory = ({onNewCategory}: any) => {
+type AddCategoryProps = {
+    onNewCategory: (category: string) => void
+}
+
+export const AddCategory = ({onNewCategory}: AddCategoryProps) => {
 
     const [inputValue, setInputValue] = useState('');
 
-    const onInputChange = ({target} : any) => {
+    const onInputChange = ({target} : ChangeEvent<HTMLInputElement>) => {
         setInputValue(target.value);
     }
 
