@@ -1,3 +1,5 @@
+import React from "react";
+
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/UseFetchGifs";
 
